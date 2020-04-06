@@ -37,6 +37,98 @@ var fn = {
 				$("#b4").addClass("d-none");$("#b5").removeClass("d-none");
 			},
 			simulate : function(){
+				var config = fn.app.whisim.config;
+				var start = $(".start");
+				var stop = $(".start");
+				
+				var nodes=[
+					[
+						{x:$(".start").attr('px'),y:$(".start").attr('py')}
+					]
+				];				
+				
+				var loop_posible = function(node,config){ //Find Nodes;
+					var nnode = [];
+					for(i in node){
+						var cnode = node[i]; //Current Node;
+						var pnode = []; //Posible Nodes
+						
+						var sx = node[i].x;
+						var sy = node[i].y;
+						console.log(node[i].length);
+						var lx = node[node[i].length-1].x;
+						var ly = node[node[i].length-1].y;
+						
+						var nx = null;
+						var ny = null;
+						
+						nx = lx-1; ny = ly; //Left
+						if($(".grid_text[px="+nx+"][py="+ny+"]").length){
+							var cnode = node[i];
+							cnode.push({x:nx,y:ny});
+							pnode.push(cnode);
+						}
+						
+						
+				
+						
+						nx = lx; ny = ly-1; //Up
+						if($(".grid_text[px="+nx+"][py="+ny+"]").length){
+							var cnode = node[i];
+							cnode.push({x:nx,y:ny});
+							pnode.push(cnode);
+						}
+						
+						nx = lx+1; ny = ly; //Right
+						if($(".grid_text[px="+nx+"][py="+ny+"]").length){
+							var cnode = node[i];
+							cnode.push({x:nx,y:ny});
+							pnode.push(cnode);
+						}
+						
+						nx = lx; ny = ly+1; //Down
+						if($(".grid_text[px="+nx+"][py="+ny+"]").length){
+							var cnode = node[i];
+							cnode.push({x:nx,y:ny});
+							pnode.push(cnode);
+						}
+						
+						for(i in pnode){
+							nnode.push(pnode[i]);
+						}
+						console.log(nnode);
+						
+					}
+					return nnode;
+				}
+				
+				
+				/*
+				var is_ending = function(config,node){
+					var result = false;
+					for(i in node){
+						
+					}
+					
+					return false;
+					
+				}
+				
+				
+				var looking = true;
+				while(looking){
+					var item = loop_posible(node,config);
+					if(ending = true;){
+						
+					}
+				}
+				
+				for(i in nodes){
+					var node = nodes[i];
+					loop_posible(node,config);
+					
+				}
+				*/
 				
 			},
 			engine : {
@@ -74,25 +166,7 @@ var fn = {
 					
 				}
 			}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
 		}
 	}
 }

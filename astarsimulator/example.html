@@ -20,11 +20,7 @@
 		<div class="card">
 			<div class="card-body">
 				<h1 class="display-4">Optional</h1>
-				<button type="button" id="b1" onclick="fn.app.whisim.select_obstackle()" class="btn btn-primary">Start</button>
-				<button type="button" id="b2" onclick="fn.app.whisim.confirm_obstackle()" class="btn btn-secondary">Confirm Obstackle</button>
-				<button type="button" id="b3" onclick="fn.app.whisim.select_start()" class="btn btn-success">Select Start</button>
-				<button type="button" id="b4" onclick="fn.app.whisim.select_stop()" class="btn btn-danger">Select Stop</button>
-				<button type="button" id="b5" onclick="fn.app.whisim.simulate()" class="btn btn-warning">Simulate</button>
+				<button type="button" id="b1" onclick="fn.app.whisim.loop()" class="btn btn-primary">Run</button>
 				<button type="button" id="b6" class="btn btn-info">Info</button>
 				<button type="button" id="b7" class="btn btn-light">Light</button>
 				<button type="button" id="b8" class="btn btn-dark">Dark</button>
@@ -35,7 +31,7 @@
 		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<script src="js/lib.js"></script>
+		<script src="js/svg.js"></script>
 		<script>
 			fn.app.whisim.init();
 			$("#b2,#b3,#b4,#b4,#b5,#b6,#b7,#b8").addClass("d-none");
